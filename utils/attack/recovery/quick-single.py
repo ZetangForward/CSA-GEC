@@ -4,10 +4,10 @@ annotator = errant.load('en')
 
 
 if __name__=='__main__':
-    src_path='/home/fkq/py_file/conll2014.src'
-    golden_path='/home/fkq/py_file/conll2014.trg'
-    model_result_path='/home/fkq/py_file/Study/pos1'
-    attack_pos_path='/home/fkq/py_file/pos/attack_pos_1.txt'
+    src_path=sys.argv[1]
+    golden_path=sys.argv[2]
+    model_result_path=sys.argv[3]
+    attack_pos_path=sys.argv[4]
     with open(src_path) as f1:
         src_content=f1.readlines()
     with open(golden_path) as f2:

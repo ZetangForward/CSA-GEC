@@ -22,6 +22,10 @@ The basic setup and checkpoint are referred to [pseudodata-for-gec](https://gith
 
 One can finetune the model with our **CSA** method on the basis of well-trained [model](https://gec-pseudo-data.s3-ap-northeast-1.amazonaws.com/ldc_giga.spell_error.finetune.checkpoint_best.pt). Before running the command below, one should install all the requirements and be familiar with the codes in [pseudodata-for-gec](https://github.com/butsugiri/gec-pseudodata).
 
+We provide our checkpoint below:
+ - [regularization data trained version]()
+ - [hard samples trained version]()
+
 ### Processing
 We process the data on the basis of `fairseq-preprocess`, and we provide the scipt `preprocess.sh`. One can run the following command:
 ```
@@ -41,6 +45,9 @@ As for these two operation, it shares the same sript `inference.sh`.
 For generating augmentation data, we utilize training data as source. 
 For inferencing, we utilize testing data as source.
 
+
+## Results
+We have provided all the inference results on four clean datasets in folder ./results
 
 
 
