@@ -1,21 +1,20 @@
 MODEL_DIR=$1
 pre_trained_model=$2
 device=$3
+DATA_DIR=$4
 
 bert_type=bert-base-cased
-bert_model=/data1/tzc/model/bert-gec/bert-base-cased
-SUBWORD_NMT=/home/tzc/subword/subword_nmt                                                            
-FAIRSEQ_DIR=/home/tzc/GEC/bert-nmt
-BPE_MODEL_DIR=/home/tzc/GEC/gec-pseudodata/bpe/
-VOCAB_DIR=/home/tzc/GEC/gec-pseudodata/vocab
+bert_model=/path/to/bert-model
+SUBWORD_NMT=/path/to/subword_nmt                                                  
+FAIRSEQ_DIR=/path/to/fairseq   
+BPE_MODEL_DIR=/path/to/bpe_file
+VOCAB_DIR=/path/to/vocabulary
+PROCESSED_DIR=${DATA_DIR}/bert-nmt
 
-DATA_DIR=/data1/tzc/gec/data/gec-en/benchmark-data/wi+locness_v2.1.bea19
-PROCESSED_DIR=/data1/tzc/gec/data/gec-en/benchmark-data/wi+locness_v2.1.bea19/bert-process
-
-train_src=$DATA_DIR/wi-train.src
-train_trg=$DATA_DIR/wi-train.trg
-valid_src=$DATA_DIR/wi-valid.src
-valid_trg=$DATA_DIR/wi-valid.trg
+train_src=$DATA_DIR/train.src
+train_trg=$DATA_DIR/train.trg
+valid_src=${DATA_DIR}/valid.src
+valid_trg=${DATA_DIR}/valid.trg
 
 cpu_num=`grep -c ^processor /proc/cpuinfo`
 
@@ -74,9 +73,4 @@ nohup python3.7 -u $FAIRSEQ_DIR/train.py $PROCESSED_DIR/bin \
     --reset-optimizer \
     --reset-meters \
     --reset-dataloader \
-    --keep-last-epochs 2 > ${MODEL_DIR}/finetune-WI.log 2>&1 & 
-
-    # --rdrop \
-    # --reg 3 
-
-    # python2 m2scorer.py /home/tzc/bert-gec/scripts/output/test.best.tok /data1/tzc/data/gec-en/data/conll14st-test-data/noalt/official-2014.combined.m2
+    --keep-last-epochs 2

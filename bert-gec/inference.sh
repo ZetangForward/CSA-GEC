@@ -4,11 +4,11 @@ MODEL_DIR=$3
 task=$4
 beam=5
 bert_type=bert-base-cased
-SUBWORD_NMT=/home/tzc/subword/subword_nmt
-FAIRSEQ_DIR=/home/tzc/GEC/bert-nmt
-BPE_MODEL_DIR=/home/tzc/GEC/gec-pseudodata/bpe
-OUTPUT_DIR=/home/tzc/GEC/bert-gec/CSA/${task}
-PREPROCESS=/data1/tzc/gec/data/gec-en/bert-gec/process/bin
+SUBWORD_NMT=/path/to/subword_nmt                                                  
+FAIRSEQ_DIR=/path/to/fairseq   
+BPE_MODEL_DIR=/path/to/bpe_file
+PROCESSED_DIR=${DATA_DIR}/bert-nmt
+OUTPUT_DIR=./results/${task}
 
 if [ -e ${OUTPUT_DIR} ]; then 
     echo '${OUTPUT_DIR} already exist'
@@ -23,7 +23,7 @@ python -u detok.py $input $OUTPUT_DIR/test.bert.src
 paste -d "\n" $OUTPUT_DIR/test.bpe.src $OUTPUT_DIR/test.bert.src > $OUTPUT_DIR/test.cat.src
 
 echo Generating...
-CUDA_VISIBLE_DEVICES=$gpu python3.7 -u ${FAIRSEQ_DIR}/interactive.py $PREPROCESS \
+CUDA_VISIBLE_DEVICES=$gpu python3.7 -u ${FAIRSEQ_DIR}/interactive.py $PROCESSED_DIR \
     --path ${MODEL_DIR} \
     --beam ${beam} \
     --nbest ${beam} \
@@ -41,5 +41,3 @@ cat $OUTPUT_DIR/test.nbest.tok | grep "^H"  | python -c "import sys; x = sys.std
 sed -i '$d' $OUTPUT_DIR/test.best.tok
 
 rm $OUTPUT_DIR/test.nbest.tok $OUTPUT_DIR/test.bpe.src $OUTPUT_DIR/test.cat.src $OUTPUT_DIR/test.bert.src
-
-mv $OUTPUT_DIR/test.best.tok ${OUTPUT_DIR}/${FINAL_NAME}

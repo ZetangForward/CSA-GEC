@@ -26,6 +26,6 @@ python $FAIRSEQ_DIR/preprocess.py --source-lang src --target-lang trg \
     --trainpref $PROCESSED_DIR/train \
     --validpref $PROCESSED_DIR/valid \
     --destdir $PROCESSED_DIR/bin \
-    --srcdict $VOCAB_DIR/${vocab} \
-    --tgtdict $VOCAB_DIR/${vocab} \
+    --srcdict $VOCAB_DIR/dict.src_bpe8000.txt \
+    --tgtdict $VOCAB_DIR/dict.trg_bpe8000.txt \
     --workers $cpu_num

@@ -4,18 +4,17 @@ device=$3
 DATA_DIR=$4
 
 bert_type=bert-base-cased
-bert_model=/data1/tzc/model/bert-gec/bert-base-cased
-SUBWORD_NMT=/home/tzc/subword/subword_nmt                                                            
-FAIRSEQ_DIR=/home/tzc/GEC/bert-nmt
-BPE_MODEL_DIR=/home/tzc/GEC/gec-pseudodata/bpe/
-VOCAB_DIR=/home/tzc/GEC/gec-pseudodata/vocab
+bert_model=/path/to/bert-model
+SUBWORD_NMT=/path/to/subword_nmt                                                  
+FAIRSEQ_DIR=/path/to/fairseq   
+BPE_MODEL_DIR=/path/to/bpe_file
+VOCAB_DIR=/path/to/vocabulary
 PROCESSED_DIR=${DATA_DIR}/bert-nmt
 
-train_src=$DATA_DIR/hard.src
-train_trg=$DATA_DIR/hard.trg
-valid_src=/data1/tzc/gec/data/gec-en/benchmark-incorr-data/bea2019-incorr.src
-valid_trg=/data1/tzc/gec/data/gec-en/benchmark-incorr-data/bea2019-incorr.trg
-
+train_src=$DATA_DIR/train.src
+train_trg=$DATA_DIR/train.trg
+valid_src=${DATA_DIR}/valid.src
+valid_trg=${DATA_DIR}/valid.trg
 
 cpu_num=`grep -c ^processor /proc/cpuinfo`
 
@@ -74,9 +73,6 @@ nohup python3.7 -u $FAIRSEQ_DIR/train.py $PROCESSED_DIR/bin \
     --reset-optimizer \
     --reset-meters \
     --reset-dataloader \
-    --keep-last-epochs 3 > ${MODEL_DIR}/finetune.log 2>&1 & 
+    --keep-last-epochs 3 
 
-    # --rdrop \
-    # --reg 3 
-
-    # python2 m2scorer.py /home/tzc/bert-gec/scripts/output/test.best.tok /data1/tzc/data/gec-en/data/conll14st-test-data/noalt/official-2014.combined.m2
+  
