@@ -1,11 +1,8 @@
 device=$1
-PROCESS_DIR=/data1/tzc/gec/data/gec-en/benchmark-data/wi+locness_v2.1.bea19/process/bin
+PROCESS_DIR=/path/to/processed_data
 SAVE_DIR=$2
 pretain_model=$3
-FAIRSEQ_DIR=/home/tzc/GEC/fairseq_old
-SUBWORD_NMT=/home/tzc/subword/subword_nmt  
-VOCAB_DIR=/home/tzc/gec-pseudodata/vocab
-BPE_MODEL_DIR=/home/tzc/gec-pseudodata/bpe
+FAIRSEQ_DIR=/path/to/fairseq
 cpu_num=`grep -c ^processor /proc/cpuinfo`
 
 if [ -e ${SAVE_DIR} ]; then
@@ -38,7 +35,7 @@ python -u ${FAIRSEQ_DIR}/train.py \
     --max-epoch 3 \
     --reset-optimizer \
     --reset-dataloader \
-    --log-format simple > ${SAVE_DIR}/finetune.log 2>&1 &
+    --log-format simple 
 
 
  

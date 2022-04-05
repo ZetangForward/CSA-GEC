@@ -1,14 +1,14 @@
 DATA_DIR=$1
-SUBWORD_NMT=/home/tzc/subword/subword_nmt                                                            
-FAIRSEQ_DIR=/home/tzc/GEC/fairseq_old/fairseq_cli
-BPE_MODEL_DIR=/home/tzc/GEC/gec-pseudodata/bpe
+FAIRSEQ_DIR=/path/to/fairseq                                                           
+SUBWORD_NMT=/path/to/subword_nmt
+BPE_MODEL_DIR=/path/to/bpe_file
 PROCESSED_DIR=${DATA_DIR}/preprocess
-VOCAB_DIR=/home/tzc/GEC/gec-pseudodata/vocab
+VOCAB_DIR=/path/to/vocabulary
 
-train_src=${DATA_DIR}/hard.src
-train_trg=${DATA_DIR}/hard.trg
-valid_src=/data1/tzc/gec/data/gec-en/benchmark-incorr-data/bea2019-valid.src
-valid_trg=/data1/tzc/gec/data/gec-en/benchmark-incorr-data/bea2019-valid.trg
+train_src=${DATA_DIR}/train.src
+train_trg=${DATA_DIR}/train.trg
+valid_src=${DATA_DIR}/valid.src
+valid_trg=${DATA_DIR}/valid.trg
 
 cpu_num=`grep -c ^processor /proc/cpuinfo`
 
@@ -26,6 +26,6 @@ python $FAIRSEQ_DIR/preprocess.py --source-lang src --target-lang trg \
     --trainpref $PROCESSED_DIR/train \
     --validpref $PROCESSED_DIR/valid \
     --destdir $PROCESSED_DIR/bin \
-    --srcdict $VOCAB_DIR/dict.src_bpe8000.txt \
-    --tgtdict $VOCAB_DIR/dict.trg_bpe8000.txt \
-    --workers 20
+    --srcdict $VOCAB_DIR/${vocab} \
+    --tgtdict $VOCAB_DIR/${vocab} \
+    --workers $cpu_num

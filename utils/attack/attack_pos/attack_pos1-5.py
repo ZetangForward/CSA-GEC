@@ -9,26 +9,7 @@ import numpy as np
 from similarity import similarity
 import re
 from rules import word_rules
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-
-dict_path='/data1/tzc/fkq/output/data/corr_to_err_dict'
-attack_pos_path='/data1/tzc/fkq/generate/attack_pos_1.txt'
-attack_sen_path='/data1/tzc/fkq/generate/attack_sen_1-5.txt'
-
-result_path='/data1/tzc/fkq/generate/result_pos__1.txt'
-
-tokenizer =  DistilBertTokenizer.from_pretrained('distilbert-base-cased')
-model = DistilBertModel.from_pretrained('distilbert-base-cased').cuda()
-
-with open(dict_path,'r') as f1:
-    js=f1.read()
-    dict=json.loads(js)
-    # print(dict)
-with open(attack_pos_path) as f2:
-    pos=f2.readlines()
-with open(attack_sen_path) as f3:
-    sen=f3.readlines()
-
+import sys
 
 def a_res(samples, m):
 
@@ -100,7 +81,7 @@ def traversal(r,c):
     return result
         
     
-def search(dict_path,pos_path,sen_path):
+def search(result_path):
     
     r=0
     c=0
@@ -111,7 +92,6 @@ def search(dict_path,pos_path,sen_path):
             count+=1 
             num=line[1:-2]
             if num=='-1':
-                print(str(count)+'-1!')
                 if sen[r].endswith('\n'):
                     result_file.write(sen[r])
                 else:
@@ -121,11 +101,7 @@ def search(dict_path,pos_path,sen_path):
                 continue
             c_all=num
         
-
-            print(c_all)
             res=traversal(r,c_all) 
-            print(sen[r])
-            print(str(r)+ " "+ str(res))
             
             if str(res).endswith('\n'):
                 result_file.write(str(res))
@@ -138,4 +114,21 @@ def search(dict_path,pos_path,sen_path):
 
 
 if __name__=='__main__':
-    search(dict_path,attack_pos_path,attack_sen_path)
+    gpu=sys.argv[1]
+    dict_path=sys.argv[2]
+    attack_pos_path=sys.argv[3]
+    attack_sen_path=sys.argv[4]
+    result_path=sys.argv[5]
+
+    os.environ["CUDA_VISIBLE_DEVICES"] = gpu
+    tokenizer =  DistilBertTokenizer.from_pretrained('distilbert-base-cased')
+    model = DistilBertModel.from_pretrained('distilbert-base-cased').cuda()
+
+    with open(dict_path,'r') as f1:
+        js=f1.read()
+        dict=json.loads(js)
+    with open(attack_pos_path) as f2:
+        pos=f2.readlines()
+    with open(attack_sen_path) as f3:
+        sen=f3.readlines()
+    search(result_path)
