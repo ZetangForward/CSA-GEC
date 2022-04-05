@@ -11,9 +11,9 @@ The basic setup and checkpoint are referred to [bert-gec](https://github.com/kan
 One can finetune the model with our **CSA** method on the basis of well-trained [model](https://drive.google.com/drive/folders/1h_r46EswcT1q75qwje6h6yJpOxzAG8gP?usp=sharing). 
 
 `NOTICE`
-Before running the command below, one should install all the requirements and be familiar with the codes in [bert-gec](https://github.com/kanekomasahiro/bert-gec).
+Before running the command below, one should prepare all the requirements and be familiar with the codes in [bert-gec](https://github.com/kanekomasahiro/bert-gec).
 
-We provide our checkpoint below:
+We provide our checkpoints as listing below:
  - [regularization data trained version]()
  - [hard samples trained version]()
 

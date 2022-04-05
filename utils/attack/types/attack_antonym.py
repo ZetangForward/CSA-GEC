@@ -1,19 +1,7 @@
-"""
-args:
-    -attack_pos_path:
-    -attack_sen_path:
-    -result_path:
-
-"""
 import sys
 import json
 import re
 import nlpaug.augmenter.word as naw
-
-attack_pos_path='/data1/tzc/fkq/pseudo/pseudo4_pos'
-attack_sen_path='/data1/tzc/fkq/pseudo/pseudo4_sen'
-result_path='/data1/tzc/data/ablation/internal-aug/ant/pseudo4_ant'
-
 
 
 def search_token(sen_ori,column):
@@ -26,7 +14,7 @@ def search_token(sen_ori,column):
         - new sentence that one token was be replaced
     """
     sen_att=sen_ori.strip().split(' ')
-    new_sentence=list(sen_att) # 复制一份，进行token的修改
+    new_sentence=list(sen_att)
     
     pre_token = sen_att[column]
     
@@ -37,7 +25,6 @@ def search_token(sen_ori,column):
     aug = naw.AntonymAug()
     augmented_word = aug.augment(post_token)
 
-    # print('verb '+sen_ori+' '+augmented_word)
     new_sentence[column]=augmented_word
     new_sentence_str=' '.join(new_sentence)    
 
@@ -45,20 +32,20 @@ def search_token(sen_ori,column):
     
 result=""
 def traversal(r,c_all):
-    global result # 每一个token被攻击完后，生成的句子
+    global result
     for i in range(len(c_all)):
         if i==0:
             result=search_token(sen[r],c_all[i])
         else:
             result=search_token(result,c_all[i])
-    return result # 攻击完所有的token，返回最终结果
+    return result
         
     
 def search(pos,sen):
     
-    r=0 # 当前在第几行
-    c=0 # 当前在第几列
-    c_all=[] # 所有值为1（要被攻击的）的token的位置
+    r=0
+    c=0
+    c_all=[]
 
     with open(result_path,'w') as result_file:
         for line in pos:  
@@ -69,20 +56,16 @@ def search(pos,sen):
                     c+=1
             if c_all==[]:
                 if sen[r].endswith('\n'):
-                    result_file.write(sen[r]) # 将结果写入文件
+                    result_file.write(sen[r])
                 else:
-                    result_file.write(sen[r]+ '\n') # 将结果写入文件
-                # print(str(r)+ " is null")
+                    result_file.write(sen[r]+ '\n')
             else:
-                # print(c_all)
                 res=traversal(r,c_all) 
-                # print(str(r)+ " "+ str(res))
                 
                 if str(res).endswith('\n'):
-                    result_file.write(str(res)) # 将结果写入文件
+                    result_file.write(str(res))
                 else:
-                    result_file.write(str(res) + '\n') # 将结果写入文件
-                # print(res)
+                    result_file.write(str(res) + '\n')
             c_all.clear()    
             c=0
             r+=1

@@ -5,8 +5,8 @@ Code for the paper `Beyond Hard Samples: Robust and Effective Grammatical Error 
 - Python 3.6 or higher
 - torch == 1.9.1
 - [subword-nmt](https://github.com/rsennrich/subword-nmt)
-- [fairseq](https://github.com/pytorch/fairseq) (We strongly recommend sticking with the same commit ID as for different models.)
-- [transformers](https://github.com/huggingface/transformers)(We strongly recommend sticking with the same commit ID as for different models.)
+- [fairseq](https://github.com/pytorch/fairseq) (We strongly recommend sticking with the same commit ID for different models.)
+- [transformers](https://github.com/huggingface/transformers)(We strongly recommend sticking with the same commit ID for different models.)
 
 ### `NOTICE`
 As our method is built upon other models, place refer to the perspective original paper for more environment details. We list the link below:
