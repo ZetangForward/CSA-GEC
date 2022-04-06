@@ -5,8 +5,8 @@ UPDATE_FREQ=1
 BART_PATH=$1
 SAVE_PATH=$2
 device=$3
-DATA_DIR=/data1/tzc/gec/data/gec-en/benchmark-data/wi+locness_v2.1.bea19/bart-bin
-fairseq_path=/home/tzc/GEC/fairseq_old
+DATA_DIR=$4
+fairseq_path=/path/to/fairseq
 
 if [ ! -e ${SAVE_PATH} ]; then
     mkdir -p ${SAVE_PATH}
@@ -39,7 +39,7 @@ nohup python ${fairseq_path}/train.py ${DATA_DIR} \
     --reset-optimizer --reset-dataloader --reset-meters \
     --warmup-updates $WARMUP_UPDATES \
     --skip-invalid-size-inputs-valid-test \
-    --max-epoch 5 > ${SAVE_PATH}/bart_large.log 2>&1 &
+    --max-epoch 5 
 
 
     

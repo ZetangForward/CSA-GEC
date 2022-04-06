@@ -25,5 +25,5 @@ fairseq-preprocess \
   --validpref ${INPUT_DIR}/${prefix_valid}.bpe \
   --destdir ${INPUT_DIR}/bart-bin \
   --workers 20 \
-  --srcdict /data1/tzc/model/pretrained-gec-en/bart-large/offical_ckp/dict.txt \
-  --tgtdict /data1/tzc/model/pretrained-gec-en/bart-large/offical_ckp/dict.txt;
+  --srcdict /path/to/srcdict \
+  --tgtdict /path/to/trgdict

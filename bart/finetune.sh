@@ -6,7 +6,7 @@ BART_PATH=$1
 SAVE_PATH=$2
 device=$3
 DATA_DIR=$4
-fairseq_path=/home/tzc/GEC/fairseq_old
+fairseq_path=/path/to/fairseq
 
 
 
@@ -41,7 +41,7 @@ nohup python ${fairseq_path}/train.py ${DATA_DIR} \
     --reset-optimizer --reset-dataloader --reset-meters \
     --warmup-updates $WARMUP_UPDATES \
     --skip-invalid-size-inputs-valid-test \
-    --max-epoch 15 >> ${SAVE_PATH}/bart_large.log 2>&1 &
+    --max-epoch 15 
 
 
     

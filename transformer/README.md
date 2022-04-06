@@ -1,5 +1,5 @@
 # CSA-Grammatical-Error-Correction
-This is the instruction for reproduce the score of Transformer model.
+This is the instruction for reproducing the score of Transformer model.
 
 ## Environment Setup
 Place follow the original [paper](https://github.com/butsugiri/gec-pseudodata) (pseudodata-for-gec) to setup the environment.
