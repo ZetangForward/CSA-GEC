@@ -1,8 +1,8 @@
 # CSA-Grammatical-Error-Correction
-This is the instruction for reproducing the score of bert-gec model.
+This is the instruction for reproducing the performance of bert-gec model with our **CSA** method.
 
 ## Environment Setup
-Place follow the original [paper](https://github.com/kanekomasahiro/bert-gec) (bert-gec) to setup the environment.
+Place follow the original paper [bert-gec](https://github.com/kanekomasahiro/bert-gec) to setup the environment.
 
 
 ## How to reproduce the results
@@ -37,8 +37,8 @@ bash inference.sh /path/to/input_file gpu_id /path/to/model_ckp folder_name
 The inference results are in the ./results/folder_name/test.best.tok
 
 `NOTICE`
-For generating augmentation data, we utilize training data as source. 
-For inferencing, we utilize testing data as source.
+- For generating augmentation data, we utilize training data as source. 
+- For inferencing, we utilize testing data as source.
 
 ## Results
 We have provided all the inference results on four clean datasets in folder ./results

@@ -5,14 +5,6 @@ import nlpaug.augmenter.word as naw
 
 
 def search_token(sen_ori,column):
-    """
-    func: attack a sentence by replacing a token with its antonym
-    args:
-        - sen_ori:The sentence that will be modify
-        - column:The position of the sentence that will be modify
-    return:
-        - new sentence that one token was be replaced
-    """
     sen_att=sen_ori.strip().split(' ')
     new_sentence=list(sen_att)
     

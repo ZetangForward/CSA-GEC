@@ -1,8 +1,8 @@
 # CSA-Grammatical-Error-Correction
-This is the instruction for reproducing the score of GECToR model including BERT, RoBERTa and XLNet.
+This is the instruction for reproducing the performance of GECToR model including BERT, RoBERTa and XLNet with our **CSA** method.
 
 ## Environment Setup
-Place follow the original [paper](https://github.com/grammarly/gector) (GECToR) to setup the environment.
+Place follow the original paper [GECToR](https://github.com/grammarly/gector) to setup the environment.
 
 ## How to reproduce the results
 ### Resource
@@ -41,8 +41,8 @@ bash inference-bert.sh /path/to/input_file /path/to/save /path/to/model_dir name
 The inference results are in the /path/to/save/name_of_output_file
 
 `NOTICE`
-For generating augmentation data, we utilize training data as source. 
-For inferencing, we utilize testing data as source, and the setting of `additional_confidence` and `min_error_probability` are same as the original paper.
+- For generating augmentation data, we utilize training data as source. 
+- For inferencing, we utilize testing data as source, and the setting of `additional_confidence` and `min_error_probability` are same as the original paper.
 
 ## Results
 We have provided all the inference results on four clean datasets in folder ./results

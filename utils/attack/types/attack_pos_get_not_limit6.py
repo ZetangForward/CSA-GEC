@@ -14,11 +14,7 @@ def select(path,result_pos,result_sen):
 
     with open(path) as f:
         content=f.readlines()
-    ll=0
     for line in content:
-        ll+=1
-        if (ll%10000==1):
-            print(ll)
         if line.startswith('S-'):
             sen=line.split('\t')
             sen=sen[1].strip()

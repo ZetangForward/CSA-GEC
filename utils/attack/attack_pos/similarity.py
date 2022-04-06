@@ -1,8 +1,7 @@
 import torch
 import torch.nn.functional as F
-import numpy
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 
 def similarity(original_sen, candidata_sen_lst, tokenizer=None, model=None, lambda_=1e-6):

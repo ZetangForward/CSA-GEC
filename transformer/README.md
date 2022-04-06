@@ -1,8 +1,8 @@
 # CSA-Grammatical-Error-Correction
-This is the instruction for reproducing the score of Transformer model.
+This is the instruction for reproducing the performance of Transformer model with our **CSA** method.
 
 ## Environment Setup
-Place follow the original [paper](https://github.com/butsugiri/gec-pseudodata) (pseudodata-for-gec) to setup the environment.
+Place follow the original paper [pseudodata-for-gec](https://github.com/butsugiri/gec-pseudodata) to setup the environment.
 
 ## How to reproduce the results
 ### Resource
@@ -42,8 +42,8 @@ bash inference.sh /path/to/input_file gpu_id /path/to/model_ckp folder_name
 The inference results are in the ./results/folder_name/test.best.tok
 
 `NOTICE`
-For generating augmentation data, we utilize training data as source. 
-For inferencing, we utilize testing data as source.
+- For generating augmentation data, we utilize training data as source. 
+- For inferencing, we utilize testing data as source.
 
 
 ## Results
