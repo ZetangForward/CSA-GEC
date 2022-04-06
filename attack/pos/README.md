@@ -14,7 +14,7 @@ One can run the script with `bash` command like:
 ```
 bash pos/attack_pos.sh m2_file gpu
 ```
-We provide a available m2_file in CSA-Grammatical-Error-Correction/utils/attack/temp/m2_file_example , and you can try it.
+We provide a available m2_file in CSA-Grammatical-Error-Correction/attack/temp/m2_file_example , and you can try it.
 
 ## Results
 You will get the attacked sentences in folder `./result` .
