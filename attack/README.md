@@ -20,7 +20,7 @@ nltk.download()
 ## Generate attack datasets
 There are two main types of attack datasets: positional attacks and specific attacks, which are illustrated below, separately.
 
-We create the example data in `CSA-Grammatical-Error-Correction/data` folder for better illustration.
+We provide the example data in [CSA-Grammatical-Error-Correction/data](../data) folder for better illustration.
 
 ## For positional attack datasets
 Firstly, one should redirect the current directory to `pos` by running the following command:
