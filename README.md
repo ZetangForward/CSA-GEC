@@ -1,15 +1,13 @@
 # CSA-Grammatical-Error-Correction
-Code for the paper `Beyond Hard Samples: Robust and Effective Grammatical Error Correction with Simple Cycle Self-Augmenting` submitted to Computational Linguistics
+This repo provides the source code & data of our paper: `Beyond Hard Samples: Robust and Effective Grammatical Error Correction with Simple Cycle Self-Augmenting` (Computational Linguistics)
 
 ## Requirements
 - Python >= 3.6
 - torch == 1.9.1
-- [subword-nmt](https://github.com/rsennrich/subword-nmt)
-- [fairseq](https://github.com/pytorch/fairseq) (We strongly recommend sticking with the same commit ID for different models.)
-- [transformers](https://github.com/huggingface/transformers)(We strongly recommend sticking with the same commit ID for different models.)
+- For evaluation, we use [ERRANT](https://github.com/chrisjbryant/errant) and [M^2Scorer](https://github.com/nusnlp/m2scorer). 
 
 ### `NOTICE`
-As our method is built upon other models, place refer to the perspective original paper for more environment details. We list the link below:
+As our **CSA** method is built upon other models, place refer to the perspective original paper for more environment details. We list the link below:
 - [Transfomer](https://github.com/butsugiri/gec-pseudodata)
 - [BERT-fuse](https://github.com/kanekomasahiro/bert-gec)
 - [BART](https://github.com/Katsumata420/generic-pretrained-GEC)
@@ -29,3 +27,4 @@ In this repo, we provide the following source for reproducing our results:
 - seven attack datasets for testing the model performance and example data for quick start in [data](./data) folder
 - basic data processor for extracting same or different data in [utils](./utils) folder
 
+##
