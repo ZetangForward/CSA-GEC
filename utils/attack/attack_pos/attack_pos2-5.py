@@ -1,4 +1,3 @@
-
 from transformers import DistilBertTokenizer, DistilBertModel
 import torch
 import torch.nn.functional as F
@@ -11,9 +10,6 @@ from similarity import similarity
 import re
 from rules import word_rules
 import sys
-
-
-
 
 def a_res(samples, m):
 

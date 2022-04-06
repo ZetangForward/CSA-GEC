@@ -8,12 +8,14 @@ Place follow the original [paper](https://github.com/Katsumata420/generic-pretra
 ### Resource
 The basic setup and checkpoint are according to [generic-pretrained-GEC](https://github.com/Katsumata420/generic-pretrained-GEC/tree/master/BART-GEC).
 
+We also release the converged models trained with **CSA** method for testing:
+ - [regularization data trained version]()
+ - [hard samples trained version]()
+
 `NOTICE`
 Before running the command below, one should prepare all the requirements and be familiar with the codes in [generic-pretrained-GEC](https://github.com/Katsumata420/generic-pretrained-GEC/tree/master/BART-GEC).
 
-We provide our checkpoints as listing below:
- - [regularization data trained version]()
- - [hard samples trained version]()
+
 
 
 ### Processing & Model Initializing
@@ -43,7 +45,7 @@ bash finetune.sh /path/to/model_ckp /path/to/save_dir gpu_id /path/to/processed_
 As for these two operation, it shares the same sript `inference.sh` and code `translate.py`.
 One can run the script with `bash` command like:
 ```
-bash inference.sh /path/to/output_file gpu_id /path/to/model_ckp /path/to/input_file
+bash inference.sh /path/to/output_file gpu_id /path/to/model_ckp_dir /path/to/input_file
 ```
 
 The inference results are in the /path/to/output_file/hyp.txt

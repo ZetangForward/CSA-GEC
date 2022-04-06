@@ -1,6 +1,11 @@
 device=$1
 save_dir=$2
 train_set=$3
+dev_set=$4
+pretrain_model_dir=$5
+pretrain_model_name=$6
+vocab_path=$7
+GECToR=/path/to/GECToR
 
 if [ ! -d "${save_dir}" ];then
     mkdir -p ${save_dir}
@@ -9,14 +14,14 @@ else
 fi
 
 export CUDA_VISIBLE_DEVICES=${device}
-nohup python ../train.py \
+nohup python ${GECToR}/train.py \
     --train_set ${train_set} \
-    --dev_set /data/tzc/data/finetune/gec/CSA/cycle1/gector/bert/valid.txt \
+    --dev_set ${dev_set} \
     --model_dir ${save_dir} \
-    --pretrain_folder /data/tzc/model/benchmark/gector \
-    --pretrain bert_0_gector \
+    --pretrain_folder ${pretrain_model_dir} \
+    --pretrain ${pretrain_model_name} \
     --batch_size 64 \
-    --vocab_path /home/tzc/gector/data/output_vocabulary \
+    --vocab_path ${vocab_path} \
     --n_epoch 5 \
     --max_len 150 \
     --updates_per_epoch 0 \
@@ -29,7 +34,7 @@ nohup python ../train.py \
     --tp_prob 1 \
     --tune_bert 1 \
     --transformer_model bert \
-    --special_tokens_fix 0 > ${save_dir}/bert-cycle1.log 2>&1 &
+    --special_tokens_fix 0 
 
 
 

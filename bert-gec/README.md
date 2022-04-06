@@ -1,5 +1,5 @@
 # CSA-Grammatical-Error-Correction
-This is the instruction for reproduce the score of bert-gec model.
+This is the instruction for reproducing the score of bert-gec model.
 
 ## Environment Setup
 Place follow the original [paper](https://github.com/kanekomasahiro/bert-gec) (bert-gec) to setup the environment.
@@ -10,12 +10,13 @@ Place follow the original [paper](https://github.com/kanekomasahiro/bert-gec) (b
 The basic setup and checkpoint are referred to [bert-gec](https://github.com/kanekomasahiro/bert-gec).
 One can finetune the model with our **CSA** method on the basis of well-trained [model](https://drive.google.com/drive/folders/1h_r46EswcT1q75qwje6h6yJpOxzAG8gP?usp=sharing). 
 
+We also release the converged models trained with **CSA** method for testing:
+ - [regularization data trained version]()
+ - [hard samples trained version]()
+
 `NOTICE`
 Before running the command below, one should prepare all the requirements and be familiar with the codes in [bert-gec](https://github.com/kanekomasahiro/bert-gec).
 
-We provide our checkpoints as listing below:
- - [regularization data trained version]()
- - [hard samples trained version]()
 
 ### Processing & Training
 We process the data on the basis of `fairseq-preprocess`, and train the model with the `fairseq-train` command. We combine the process procedure and finetune procedure of stage 1 in  `finetune.sh` for , and `finetune-wi.sh` script is for Step 2. 
