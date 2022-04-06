@@ -7,12 +7,12 @@ We use the open source tools NLPAug, so please follow the website (https://githu
 ## Run
 Firstly, you should run the following command:
 ```
-cd CSA-Grammatical-Error-Correction/utils/attack/attack_pos
+cd CSA-Grammatical-Error-Correction/attack
 ```
 
 One can run the script with `bash` command like:
 ```
-bash attack_pos.sh m2_file gpu
+bash pos/attack_pos.sh m2_file gpu
 ```
 We provide a available m2_file in CSA-Grammatical-Error-Correction/utils/attack/temp/m2_file_example , and you can try it.
 

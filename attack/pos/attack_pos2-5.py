@@ -91,14 +91,11 @@ def search(result_path):
     r=0
     c_all=[]
     count=0
-    print(count)
     with open(result_path,'w') as result_file:
         for line in pos: 
-            count+=1 
-            #print(count)        
+            count+=1        
             num=line[1:-2]
             if num=='-1':
-                print(str(count)+'-1!')
                 if sen[r].endswith('\n'):
                     result_file.write(sen[r])
                 else:
@@ -112,8 +109,6 @@ def search(result_path):
 
             print(c_all)
             res=traversal(r,c_all) 
-            print(sen[r])
-            print(str(r)+ " "+ str(res))
             
             if str(res).endswith('\n'):
                 result_file.write(str(res))
