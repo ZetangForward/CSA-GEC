@@ -2,29 +2,7 @@ import sys
 import random
 
 
-def calculate():
-    """
-    func: give some statcial data [not implementation]
-    args:
-        - simi_pair:
-        - non_simi_pair:
-    return:
-        - same sentences (0 to default)
-        - wrong sentences
-    """
-    pass
-
-
 def write_back(set_lst, save_src, save_trg):
-    """
-    func:
-        write list[tuple()] to trg files
-    Args:
-        - set_lst: list:[tuple(gen_src, ori_src, trg)]
-        - save_src | save_trg : save dir
-    return:
-        None
-    """
     with open(save_trg, 'w') as wt:
         with open(save_src, 'w') as ws:
             for item in set_lst:
@@ -33,16 +11,6 @@ def write_back(set_lst, save_src, save_trg):
 
 
 def main(small_up_src, small_up_trg, big_down_src, big_down_trg, save_src, save_trg):
-    """
-    func:
-        extract same and different sentences
-        exclude same data from small dataset
-    Args:
-        - small_up_src: 
-        - ...
-    Return: 
-        None
-    """
     with open(small_up_src) as f_small_src:
         content_small_src=f_small_src.readlines()
     with open(small_up_trg) as f_small_trg:

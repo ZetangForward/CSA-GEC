@@ -1,13 +1,13 @@
 # CSA-Grammatical-Error-Correction
-This is the instruction for reproducing the performance of bert-gec model with our **CSA** method.
+This is the instruction for reproducing the performance of bert-fuse model with our **CSA** method.
 
 ## Environment Setup
-Place follow the original paper [bert-gec](https://github.com/kanekomasahiro/bert-gec) to setup the environment.
+Place follow the original paper [bert-fuse](https://github.com/kanekomasahiro/bert-fuse) to setup the environment.
 
 
 ## How to reproduce the results
 ### Resource
-The basic setup and checkpoint are referred to [bert-gec](https://github.com/kanekomasahiro/bert-gec).
+The basic setup and checkpoint are referred to [bert-fuse](https://github.com/kanekomasahiro/bert-fuse).
 One can finetune the model with our **CSA** method on the basis of well-trained [model](https://drive.google.com/drive/folders/1h_r46EswcT1q75qwje6h6yJpOxzAG8gP?usp=sharing). 
 
 We also release the converged models trained with **CSA** method for testing:
@@ -15,7 +15,7 @@ We also release the converged models trained with **CSA** method for testing:
  - [hard samples trained version]()
 
 `NOTICE`
-Before running the command below, one should prepare all the requirements and be familiar with the codes in [bert-gec](https://github.com/kanekomasahiro/bert-gec).
+Before running the command below, one should prepare all the requirements and be familiar with the codes in [bert-fuse](https://github.com/kanekomasahiro/bert-fuse).
 
 
 ### Processing & Training

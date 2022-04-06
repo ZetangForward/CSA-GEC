@@ -1,4 +1,4 @@
-## Get the  adversarial text
+# Get the  adversarial text
 This is an instruction for generating attack sentences.
 - The `pos` folder contains the scripts for perturbing specific $n$ vulnerable token in one sentence.
 - The `types` folder contains the scripts for perturbing sentences with three kinds of adversarial attack methods, including `antonym substitution`, `synonyms substitution`, and `mapping & rules`.
@@ -9,7 +9,7 @@ This is an instruction for generating attack sentences.
 with Purpose-Built Adversarial Examples](https://aclanthology.org/2020.emnlp-main.228) for more details.
 
 
-## Environment Setup
+# Environment Setup
 - We utilize the open source tools `NLPAug`, so please follow the website [[link]](https://github.com/makcedward/nlpaug) to setup the environment.
 - `Nltk` package is also required, one should run the following command:
 ```
@@ -17,12 +17,12 @@ import nltk
 nltk.download()
 ```
 
-## Generate attack datasets
+# Generate attack datasets
 There are two main types of attack datasets: positional attacks and specific attacks, which are illustrated below, separately.
 
 We provide the example data in [CSA-Grammatical-Error-Correction/data](../data) folder for better illustration.
 
-## For positional attack datasets
+# For positional attack datasets
 Firstly, one should redirect the current directory to `pos` by running the following command:
 ```
 cd ./CSA-Grammatical-Error-Correction/attack/pos
