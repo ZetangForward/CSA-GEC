@@ -4,8 +4,7 @@ import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 
-def similarity(original_sen, candidata_sen_lst, tokenizer=None, model=None, lambda_=1e-6, gpu=0):
-    os.environ["CUDA_VISIBLE_DEVICES"] = gpu
+def similarity(original_sen, candidata_sen_lst, tokenizer=None, model=None, lambda_=1e-6):
     inputs = tokenizer(original_sen, return_tensors="pt")
     for item in inputs:
         inputs[item] = inputs[item].cuda()

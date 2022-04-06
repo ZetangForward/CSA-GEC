@@ -1,7 +1,7 @@
 alignment_file=$1
 gpu=$2
 result=$3
-pos_dir=${result}/poslist
+pos_dir=${result}/positional_pos
 dict=./dict_file/corr_to_err_dict.json
 
 

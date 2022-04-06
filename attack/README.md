@@ -89,8 +89,8 @@ Similar to the positional attack, the whole pipeline of generating specific type
 2. Getting perturbance positions `positions` and original sentence `original_sentence` with `attack_pos_get_not_limit6.py` which utilizes a aforementioned plug-and-play GEC model to select the weak spots of each sentence. 
 3. Applying `attack_antonym.py`, `attack_synonym.py` and `attack_mapping_rules.py` to generate specific types of attack datasets with the help of `positions` file and `original_sentence` file in step 2.
 
-4. **A fully procedure script** is also provided. After finishing step 1, one can run the `attack_other.sh` script with `bash` command like:
+4. **A fully procedure script** is also provided. After finishing step 1, one can run the `attack_types.sh` script with `bash` command like:
 ```
-bash attack_other.sh alignment_file gpu_id result_path
+bash attack_types.sh alignment_file gpu_id result_path
 ```
-All the results are stored in `result_path`
+All the results are stored in `result_path` 

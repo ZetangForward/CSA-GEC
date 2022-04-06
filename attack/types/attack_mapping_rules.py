@@ -54,7 +54,7 @@ def search_token(sen_ori,raw,column):
 
         sen_all = list(map(lambda x: ' '.join(x), sen_all))
 
-        can_scores = similarity(sen[raw].strip(), sen_all, tokenizer, model,gpu)
+        can_scores = similarity(sen[raw].strip(), sen_all, tokenizer, model)
 
         sample_lst=[]
         for i in range(len(can_scores)):

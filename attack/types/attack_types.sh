@@ -1,7 +1,7 @@
 alignment_file=$1
 gpu=$2
 result=$3
-pos_dir=${result}/pos
+pos_dir=${result}/types_pos
 dict=./dict_file/corr_to_err_dict.json
 
 mkdir -p $pos_dir
