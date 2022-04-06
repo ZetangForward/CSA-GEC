@@ -10,6 +10,9 @@ def select(path,attack_pos,attack_sentence):
 
     a_num=0
     a_value=[]
+
+    pos_content=[]
+    sen_content=[]
     with open(path) as f:
         content=f.readlines()
     for line in content:
@@ -50,12 +53,9 @@ def select(path,attack_pos,attack_sentence):
 
         if a_num>=5:
             if len_s<=1:
-                with open(attack_pos,'a') as a1:
-                    a1.write("[-1]")
-                    a1.write('\n')
-                with open(attack_sentence,'a') as a2:
-                    a2.write(str(sen))
-                    a2.write('\n')
+                pos_content.append("[-1]")
+                sen_content.append(str(sen))
+
                 h_num=0
                 p_num=0
                 a_num=0
@@ -121,20 +121,15 @@ def select(path,attack_pos,attack_sentence):
                     break
 
             
-
-            with open(attack_pos,'a') as a1:
-                if flag==0:
-                    pos_list=[]
-                    pos_list.append(attack_src_pos)
-                    a1.write(str(pos_list))
-                    a1.write('\n')
-                else:
-                    a1.write("[-1]")
-                    a1.write('\n')
-            with open(attack_sentence,'a') as a2:
-             
-                a2.write(str(sen))
-                a2.write('\n')
+            if flag==0:
+                pos_list=[]
+                pos_list.append(attack_src_pos)
+                pos_content.append(str(pos_list))
+            else:
+                pos_content.append("[-1]")
+                
+            sen_content.append(str(sen))
+                
             h_num=0
             p_num=0
             a_num=0
@@ -142,6 +137,15 @@ def select(path,attack_pos,attack_sentence):
             h_text.clear()                      
             p_value.clear()                                 
             a_value.clear()
+    with open(attack_pos,'w') as a1:
+        for line in pos_content:
+            a1.write(line)
+            a1.write('\n')
+    with open(attack_sentence,'w') as a2:
+        for line in sen_content:
+            a2.write(line) 
+            a2.write('\n')      
+
         
 
 

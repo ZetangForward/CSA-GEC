@@ -2,7 +2,7 @@
 Code for the paper `Beyond Hard Samples: Robust and Effective Grammatical Error Correction with Simple Cycle Self-Augmenting` submitted to Computational Linguistics
 
 ## Requirements
-- Python 3.6 or higher
+- Python >= 3.6
 - torch == 1.9.1
 - [subword-nmt](https://github.com/rsennrich/subword-nmt)
 - [fairseq](https://github.com/pytorch/fairseq) (We strongly recommend sticking with the same commit ID for different models.)
@@ -18,10 +18,11 @@ As our method is built upon other models, place refer to the perspective origina
 
 ## Source
 In this repo, we provide the following source for reproducing our results:
-- perspective scripts for finetuning different models in different folders
-- converged checkpoints for all the models described in paper
-- evaluation metrics and data process tools in `utils` folder
-- seven attack datasets for testing the model performance
+- perspective scripts for finetuning different models (the folder is consistent with the model name)
+- converged checkpoints for all the models described in paper (see more in perspective model folders)
+- evaluation metrics in `recovery` and attack builder in `attack` folder
+- seven attack datasets for testing the model performance in `data` folder
+- data processor in `utils` folder
 
 ## Command
-Place refer to the perspective folders.
+Place refer to the perspective model folders.

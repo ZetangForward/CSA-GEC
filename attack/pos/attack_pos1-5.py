@@ -12,12 +12,12 @@ from rules import word_rules
 import sys
 
 def a_res(samples, m):
-
     heap = []
     for sample in samples:
         wi = sample[1]
         ui = random.uniform(0, 1)
-        ki = ui ** (1/wi)
+        print(wi)
+        ki = ui ** (1/float(wi))
 
         if len(heap) < m:
             heapq.heappush(heap, (ki, sample))
@@ -30,10 +30,7 @@ def a_res(samples, m):
     return [item[1] for item in heap]
 
 
-
-
 def search_token(sen_ori,raw,column):
-
     c=int(column)
     attack_token=''
     attack_token_dict=[]
@@ -58,7 +55,7 @@ def search_token(sen_ori,raw,column):
 
         sen_all = list(map(lambda x: ' '.join(x), sen_all))
 
-        can_scores = similarity(sen[raw].strip(), sen_all, tokenizer, model)
+        can_scores = similarity(sen[raw].strip(), sen_all, tokenizer, model,gpu)
 
         sample_lst=[]
         for i in range(len(can_scores)):

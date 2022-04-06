@@ -11,6 +11,8 @@ def select(path,attack_pos,num):
 
     a_num=0
     a_value=[]
+
+    pos_content=[]
     with open(path) as f:
         content=f.readlines()
     for line in content:
@@ -48,9 +50,7 @@ def select(path,attack_pos,num):
             a_value.append(a)
         if a_num>=5:
             if len_s<=n:
-                with open(attack_pos,'a') as a1:
-                    a1.write("[-1]")
-                    a1.write('\n')
+                pos_content.append("[-1]")
                 h_num=0
                 p_num=0
                 a_num=0
@@ -106,7 +106,6 @@ def select(path,attack_pos,num):
                     break
             arr_tag.append(temp_trg)  
 
-
             attack_list_src_pos=[]
             flag=0
             for i in attack_list_tag:
@@ -118,17 +117,11 @@ def select(path,attack_pos,num):
                         attack_list_src_pos.append(arr_src[j])
                         
                         break
-
-
+            if flag==0:
+                pos_content.append(str(attack_list_src_pos))
+            else:
+                pos_content.append("[-1]")
             
-            
-            with open(attack_pos,'a') as a1:
-                if flag==0:
-                    a1.write(str(attack_list_src_pos))
-                    a1.write('\n')
-                else:
-                    a1.write("[-1]")
-                    a1.write('\n')
             h_num=0
             p_num=0
             a_num=0
@@ -136,12 +129,14 @@ def select(path,attack_pos,num):
             h_text.clear()                      
             p_value.clear()                                 
             a_value.clear()
+    with open(attack_pos,'w') as a1:
+        for line in pos_content:
+            a1.write(line)
+            a1.write('\n')
         
         
-
-
 if __name__=='__main__':
     data_file=sys.argv[1]
     attack_pos=sys.argv[2]
     num=sys.argv[3]
-    select(data_file,attack_pos,num)
+    select(data_file, attack_pos, num)

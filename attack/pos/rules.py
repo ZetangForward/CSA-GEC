@@ -1,6 +1,6 @@
 import nltk
 from nltk import word_tokenize
-from nltk.tag import pos_tag,map_tag
+from nltk.tag import map_tag
 import inflect
 from nltk.corpus import wordnet as wn
 import nlpaug.augmenter.word as naw

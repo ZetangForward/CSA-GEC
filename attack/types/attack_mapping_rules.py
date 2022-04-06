@@ -10,8 +10,6 @@ from similarity import similarity
 import re
 from rules import word_rules
 import sys
-# os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-
 def a_res(samples, m):
     heap = []
     for sample in samples:
@@ -56,7 +54,7 @@ def search_token(sen_ori,raw,column):
 
         sen_all = list(map(lambda x: ' '.join(x), sen_all))
 
-        can_scores = similarity(sen[raw].strip(), sen_all, tokenizer, model)
+        can_scores = similarity(sen[raw].strip(), sen_all, tokenizer, model,gpu)
 
         sample_lst=[]
         for i in range(len(can_scores)):
