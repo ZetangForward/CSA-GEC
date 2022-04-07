@@ -6,4 +6,4 @@ All the public GEC datasets used in the paper can be downloaded from [here](http
 Synthetically created datasets can be generated/downloaded [here](https://github.com/awasthiabhijeet/PIE/tree/master/errorify).
 
 ## Seven attack test sets
-Seven attack test sets for evaluating the model performance are stored in the [google drive](https://drive.google.com/drive/folders/1__PILou3NLU0dZDe14YQ-tYXy6PCt28s). Place cite the original paper before utilize them.
+Seven attack test sets for evaluating the model performance are stored in the [google drive](https://drive.google.com/file/d/1y9dOBrCDFUAhuwlhAUEJaQl5giofotai/view?usp=sharing). Place cite the original paper before utilize them.
