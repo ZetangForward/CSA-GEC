@@ -9,8 +9,8 @@ Place follow the original paper [LM-Critic](https://github.com/michiyasunaga/LM-
 The basic setting of hyper-parameters is according to [LM-Critic](https://github.com/michiyasunaga/LM-Critic)
 
 We also release the converged models trained with **CSA** method for testing:
- - [regularization data trained version]()
- - [hard samples trained version]()
+ - [regularization data trained version](https://drive.google.com/file/d/1X9R9INwiDGSS31gVUucqeJMGOrkYwCKW/view?usp=sharing)
+ - [hard samples trained version](https://drive.google.com/file/d/1X9R9INwiDGSS31gVUucqeJMGOrkYwCKW/view?usp=sharing)
 
 `NOTICE`
 Before running the command below, one should prepare all the requirements and be familiar with the codes in [LM-Critic](https://github.com/michiyasunaga/LM-Critic).

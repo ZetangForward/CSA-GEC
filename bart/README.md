@@ -9,8 +9,8 @@ Place follow the original paper [generic-pretrained-GEC](https://github.com/Kats
 The basic setting of hyper-parameters is according to [generic-pretrained-GEC](https://github.com/Katsumata420/generic-pretrained-GEC/tree/master/BART-GEC).
 
 We also release the converged models trained with **CSA** method for testing:
- - [regularization data trained version]()
- - [hard samples trained version]()
+ - [regularization data trained version](https://drive.google.com/file/d/1Yys2T5hOvb9w93A6jnI8T_SRYkXGzzPR/view?usp=sharing)
+ - [hard samples trained version](https://drive.google.com/file/d/1Yys2T5hOvb9w93A6jnI8T_SRYkXGzzPR/view?usp=sharing)
 
 `NOTICE`
 Before running the command below, one should prepare all the requirements and be familiar with the codes in [generic-pretrained-GEC](https://github.com/Katsumata420/generic-pretrained-GEC/tree/master/BART-GEC).

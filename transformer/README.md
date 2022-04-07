@@ -10,8 +10,8 @@ The basic setup and checkpoint are according to [pseudodata-for-gec](https://git
 One can finetune the model with our **CSA** method on the basis of well-trained [model](https://gec-pseudo-data.s3-ap-northeast-1.amazonaws.com/ldc_giga.spell_error.finetune.checkpoint_best.pt). 
 
 We also release the converged models trained with **CSA** method for testing:
- - [regularization data trained version]()
- - [hard samples trained version]()
+ - [regularization data trained version](https://drive.google.com/file/d/1oHyPfZP5V6SNsdLlv7EUdQNmaN-xnbrW/view?usp=sharing)
+ - [hard samples trained version](https://drive.google.com/file/d/1oHyPfZP5V6SNsdLlv7EUdQNmaN-xnbrW/view?usp=sharing)
 
 `NOTICE`
 Before running the command below, one should prepare all the requirements and be familiar with the codes in [pseudodata-for-gec](https://github.com/butsugiri/gec-pseudodata).
