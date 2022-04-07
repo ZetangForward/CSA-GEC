@@ -11,8 +11,8 @@ The basic setup and checkpoint are referred to [bert-fuse](https://github.com/ka
 One can finetune the model with our **CSA** method on the basis of well-trained [model](https://drive.google.com/drive/folders/1h_r46EswcT1q75qwje6h6yJpOxzAG8gP?usp=sharing). 
 
 We also release the converged models trained with **CSA** method for testing:
- - [regularization data trained version]()
- - [hard samples trained version]()
+ - [regularization data trained version](https://drive.google.com/file/d/1iDp1k479qjOPMdzAqcBU9-Ynu2D4cs5S/view?usp=sharing)
+ - [hard samples trained version](https://drive.google.com/file/d/1iDp1k479qjOPMdzAqcBU9-Ynu2D4cs5S/view?usp=sharing)
 
 `NOTICE`
 Before running the command below, one should prepare all the requirements and be familiar with the codes in [bert-fuse](https://github.com/kanekomasahiro/bert-fuse).
