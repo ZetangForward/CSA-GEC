@@ -23,7 +23,7 @@ In this repo, we provide the following source for reproducing our results:
     - [LM-critic](./lm-critic)
     - [GECToR](./gector)
 - converged checkpoints for all the models described in paper [[link]](https://drive.google.com/drive/folders/1foVJeIV1xYrJUJ-c7au3SDj8Mq-NGi0c)
-- evaluation metrics in [recovery](./recovert) and attack builder in [attack](./attack) folder
+- evaluation metrics in [recovery](./recovery) and attack builder in [attack](./attack) folder
 - seven attack datasets for testing the model performance and example data for quick start in [data](./data) folder
 - basic data processor for extracting same or different data in [utils](./utils) folder
 
