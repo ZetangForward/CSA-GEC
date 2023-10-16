@@ -1,5 +1,5 @@
 # CSA-Grammatical-Error-Correction
-This repo provides the source code & data construction of our paper: `Beyond Hard Samples: Robust and Effective Grammatical Error Correction with Simple Cycle Self-Augmenting` (NLPCC2023 & Preprint)
+This repo provides the source code & data construction of our paper: `Beyond Hard Samples: Robust and Effective Grammatical Error Correction with Simple Cycle Self-Augmenting` (NLPCC2023 & Preprint-Version2.0)
 
 ## Requirements
 - Python >= 3.6
